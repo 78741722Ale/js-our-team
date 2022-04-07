@@ -48,19 +48,39 @@ const team = [
 // Verifico in console il risultato e la forma dell'object
 console.log(typeof team);
 
-// Avvio il ciclo for per tutte le informazioni
+// Creo array vuoti (milestone 2) per poter pushare all'interno le informazioni
+const arrayNameInfo = []; // Array per nome
+const arrayNameRole = []; // Array per ruolo
+const arrayNameImage = []; // Array per immagine
 
+// Avvio il ciclo for per tutte le informazioni
 for (let i = 0; i < team.length; i++) {
-    // Cerco di suddividere l'array sopra disarticolando il
-    // team nel ciclo for, a ogni i dovrà rilasciare
-    // un articolo singleTeamObj
+    // Cerco di suddividere l'array sopra disarticolando il team nel ciclo for, a ogni i dovrà rilasciare un articolo singleTeam
     const singleTeam = team[i]
-    // Ora ricerco per il nome
-    console.log(singleTeam.name);
-    // Ora ricerco per il ruolo
-    console.log(singleTeam.role);
-    // Ora ricerco per immagine
+    
+    console.log(singleTeam.name); // Ora ricerco per il nome, ruolo e immagine
+    arrayNameInfo.push(singleTeam.name) // Provo a pushare dentro all'array vuoto
+    // 
+    // Creo costante nametag per mettere la stringa in una lista non ordinata
+    const name_info = document.querySelector(".nomi")
+    name_info.innerHTML += `<li>${singleTeam.name}</li>`
+    // 
+    console.log(singleTeam.role); 
+    arrayNameRole.push(singleTeam.role) // Provo a pushare dentro all'array vuoto
+    // Creo costante nametag per mettere la stringa in una lista non ordinata
+    const role_info = document.querySelector(".role")
+    role_info.innerHTML += `<li>${singleTeam.role}</li>`
+     // 
     console.log(singleTeam.image);
+    arrayNameImage.push(singleTeam.image) // Provo a pushare dentro all'array vuoto
+    // 
+    // Creo costante nametag per mettere la stringa in una lista non ordinata
+    const image_info = document.querySelector(".image")
+    image_info.innerHTML += `<li>${singleTeam.image}</li>`
     // Spaziatura tra nomi/ruoli/image
     console.log('_______');
 }
+// Verifica in console log degli array riempiti
+console.log(arrayNameInfo, arrayNameRole, arrayNameImage);
+
+
